@@ -39,7 +39,7 @@ jobs:
       image: barichello/godot-ci:4.4.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -52,7 +52,7 @@ jobs:
           mkdir -v -p build/windows
           godot -v --export-release "Windows Desktop" ./build/windows/$EXPORT_NAME.exe
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: Windows
           path: ${{ env.EXPORT_FOLDER }}/build/windows
@@ -76,7 +76,7 @@ jobs:
       image: barichello/godot-ci:4.4.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/templates
@@ -87,7 +87,7 @@ jobs:
           mkdir -v -p build/linux
           godot -v --export-release "Linux/X11" ./build/linux/$EXPORT_NAME.x86_64
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: Linux
           path: ${{ env.EXPORT_FOLDER }}/build/linux
@@ -111,7 +111,7 @@ jobs:
       image: barichello/godot-ci:4.4.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -124,7 +124,7 @@ jobs:
           mkdir -v -p build/web
           godot -v --export-release "HTML5" ./build/web/index.html
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: Web
           path: ${{ env.EXPORT_FOLDER }}/build/web
@@ -157,7 +157,7 @@ jobs:
       image: barichello/godot-ci:4.4.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
       - name: Setup
         run: |
           mkdir -v -p ~/.local/share/godot/export_templates/
@@ -170,7 +170,7 @@ jobs:
           mkdir -v -p build/mac
           godot -v --export-release "Mac OSX" ./build/mac/$EXPORT_NAME.zip
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: Mac
           path: ${{ env.EXPORT_FOLDER }}/build/mac
